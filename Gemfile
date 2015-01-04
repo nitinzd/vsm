@@ -3,7 +3,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
+gem "activeresource"
 gem "mongoid", "~> 4.0.0"
+gem "mongoid-slug"
+gem "haml"
+gem "haml-rails"
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use SCSS for stylesheets
