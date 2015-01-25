@@ -34,6 +34,10 @@ class User
    field :unlock_token,    type: String # Only if unlock strategy is :email or :both
    field :locked_at,       type: Time
 
+  # Associations
+  has_one :profile
+  has_many :posts
+    has_many :comments
   # Hack for Devise as specified in https://github.com/plataformatec/devise/issues/2949#issuecomment-40520236
   def self.serialize_into_session(record)
     [record.id.to_s, record.authenticatable_salt]
