@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     member do
-      get :profile
+      match :profile, via: [:get, :put]
+      match :mprofile, via: [:get, :put]
         end
 resources :pms
     resources :posts do
