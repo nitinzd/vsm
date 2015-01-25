@@ -2,6 +2,9 @@
 class Mprofile
   include Mongoid::Document
 
+  # Mount uploader for photo upload
+  mount_uploader :image, FileUploader
+
   #Personal info
   field :height, type: Float
   field :religion, type: String
@@ -40,6 +43,7 @@ field :children, type: String
   field :csm, type: String
   #My expectations in my words
   field :words, type: String
+  field :image
 
   # Association
   belongs_to :user
