@@ -9,6 +9,11 @@ gem "mongoid-slug"
 gem "haml"
 gem "haml-rails"
 gem "devise"
+gem "simple_form"
+gem "country_select"
+gem "twitter-bootstrap-rails"
+gem "language-select"
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use SCSS for stylesheets
