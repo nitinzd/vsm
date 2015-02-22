@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
 
+ruby "2.1.5"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 gem "activeresource"
-gem "mongoid", "~> 4.0.0"
+gem "mongoid"
 gem "mongoid-slug"
 gem "haml"
 gem "haml-rails"
@@ -17,7 +18,7 @@ gem "language-select"
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -49,4 +50,3 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
-ruby "2.1.5"
