@@ -50,3 +50,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
+gem "jquery-datatables-rails", '~> 3.1.1'
