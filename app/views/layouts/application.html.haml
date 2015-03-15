@@ -33,8 +33,9 @@
                   = link_to "Link 1", "?path=4", class: 'btn btn-default nav-link'
                   = link_to "Link 2", "?path=5", class: 'btn btn-default nav-link'
                   = link_to "Link 3", "?path=7", class: 'btn btn-default nav-link'
-                  = link_to "Profile", user_path(current_user), class: 'btn btn-default nav-link'
-                  = link_to "Blog", posts_path, class: 'btn btn-default nav-link'
+                  - unless current_user.nil?
+                    = link_to "Profile", user_path(current_user), class: 'btn btn-default nav-link'
+                    = link_to "Blog", posts_path, class: 'btn btn-default nav-link'
 
             .col-lg-9
               = bootstrap_flash
