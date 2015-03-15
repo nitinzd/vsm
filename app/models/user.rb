@@ -40,6 +40,8 @@ class User
   has_many :posts
     has_many :comments
   has_many :pms
+  #Nested attributes
+  accepts_nested_attributes_for :profile
 
   # Hack for Devise as specified in https://github.com/plataformatec/devise/issues/2949#issuecomment-40520236
   def self.serialize_into_session(record)

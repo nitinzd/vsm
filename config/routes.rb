@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     member do
-      match :profile, via: [:get, :put]
-      match :mprofile, via: [:get, :put]
-        end
-resources :pms
-    resources :posts do
-resources :tags
-      resources :comments
+      match :profile, via: [:get, :post]
+      match :mprofile, via: [:get, :post]
     end
   end
+  resources :pms
+  resources :posts do
+    resources :tags
+    resources :comments
+  end
+  post 'post/save/comment', to: 'posts#post_comment', as: :save_comment
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

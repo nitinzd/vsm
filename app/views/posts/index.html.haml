@@ -1,0 +1,23 @@
+%h1 Blog
+%br
+%br
+%table.table{id: "t_posts"}
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th
+  %tbody
+    - @posts.each do |p|
+      %tr
+        %td= p.title
+        %td= p.description
+        %td= link_to "Click here to read more", post_path(p)
+
+%br
+%br
+= link_to "New post", new_post_path
+
+:javascript
+  $("#t_posts").dataTable()
+

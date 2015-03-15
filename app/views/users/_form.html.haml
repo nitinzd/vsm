@@ -1,0 +1,13 @@
+= simple_form_for @user, url: profile_user_path(@user), method: :post do |f|
+  .form-inputs
+    = f.simple_fields_for :profile do |p|
+      = p.input :name, label: "Name"
+      = p.input :nickname, label: "Nickname"
+      = p.input :local_address, label: "Local address"
+      = p.input :permanent_address, label: "Permanent address"
+      = p.input :phone_number, label: "Phone / Mobile"
+      = p.input :date_of_birth, label: "Date of birth", input_html: {class: "datepicker"}
+  .form-actions
+    = f.button :submit, "Save profile", class: 'btn btn-large btn-success'
+    = link_to "Cancel", user_path(@user)
+

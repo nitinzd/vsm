@@ -1,0 +1,20 @@
+- unless @post.comments.nil?
+  %h2 Comments
+  - @post.comments.each do |c|
+    - unless c.new_record?
+      %h3= get_user_name(c)
+      %p= c.description
+  - if current_user.nil?
+    %p Login to post comments
+  - else
+    %h2 Post a comment
+    = simple_form_for @post, url: save_comment_path, method: :post, remote: true do |f|
+      .form-inputs
+        = f.hidden_field :id, value: @post.id
+        - @post.comments.each do |comment|
+          - if comment.new_record?
+            = f.simple_fields_for :comments, comment do |c|
+              = c.input :description, label: "Comment"
+              = c.hidden_field :user_id, value: current_user.id
+      .form-actions
+        = f.button :submit, "Comment", class: 'btn btn-large btn-success'
