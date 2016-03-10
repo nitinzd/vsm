@@ -8,37 +8,11 @@
   %body
     .navbar
       .container
-        - case params['path'].to_i
-        - when 4
-          .logo= image_tag("matrimony image4.jpeg", width: '100%', height: '100%')
-        - when 5
-          .logo= image_tag("matrimony image5.jpeg", width: '100%', height: '100%')
-        - when 7
-          .logo= image_tag("matrimony image7.jpeg", width: '100%', height: '100%')
-        - else
-          .logo= image_tag("matrimony image8.jpeg", width: '100%', height: '100%')
+        .logo= image_tag("VSM_logo.jpg", width: '100%', height: '100%', alt: "Logo")
 
-    .navbar.navbar-static-top
-      .container
-        .sub-container
-          %a.navbar-brand(href="") Vanjarisamaaj
-          %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .navbar-collapse.collapse.navbar-responsive-collapse
-            .row
-              .col-md-14
-                .bs-example{"data-example-id" =>"btn-tags"}
-                  = link_to "Link 1", "?path=4", class: 'btn btn-default nav-link'
-                  = link_to "Link 2", "?path=5", class: 'btn btn-default nav-link'
-                  = link_to "Link 3", "?path=7", class: 'btn btn-default nav-link'
-                  - unless current_user.nil?
-                    = link_to "Profile", user_path(current_user), class: 'btn btn-default nav-link'
-                    = link_to "Blog", posts_path, class: 'btn btn-default nav-link'
-
-            .col-lg-9
-              = bootstrap_flash
-              = yield
-          %footer
-            %p &copy; Company 2014
+    .col-lg-9
+      = bootstrap_flash
+      = yield
+      %footer
+        %p &copy; Company 2014
+	

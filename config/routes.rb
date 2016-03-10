@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
       match :profile, via: [:get, :post]
-      match :mprofile, via: [:get, :post]
     end
   end
   resources :pms
+  resources :matrimonial
   resources :posts do
     resources :tags
     resources :comments
